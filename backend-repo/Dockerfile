@@ -9,8 +9,9 @@ RUN pip install --upgrade pip
 RUN pip install -r /requirements.txt
 
 
-RUN mkdir /backend
-COPY ./backend /backend
-WORKDIR /backend
+RUN mkdir /backend-repo
+COPY ./backend-repo /backend-repo
+RUN chmod 777 /backend-repo
+WORKDIR /backend-repo
 # Run the application:
 # CMD python manage.py runserver 0.0.0.0:8000
