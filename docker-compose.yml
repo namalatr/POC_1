@@ -16,11 +16,7 @@ services:
     ports:
       - "9008:8000"
     volumes:
-      - ./backend-repo:/backend-repo
-    command: >             
-       sh -c "python3 manage.py runserver 0.0.0.0:8000"
-    depends_on:
-      - poc-db      
+      - ./backend-repo:/backend-repo   
   poc-db:  
     container_name: poc-db
     image: mysql:5.7
