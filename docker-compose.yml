@@ -33,7 +33,7 @@ services:
       MYSQL_PASSWORD: admin123
       MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
     volumes:
-      - ./backend-repo/data/mysql/db:/var/lib/mysql
+      - ./backend-repo/data/mysql/db:/var/lib/mysql:rw
     ports:
       - "9003:3306"    
   poc-phpmyadmin:
