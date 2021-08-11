@@ -18,9 +18,10 @@ services:
     volumes:
       - ./backend-repo:/backend
     command: >
-      sh -c "python3 manage.py makemigrations &&            
-          python3 manage.py migrate &&                 
-          python3 manage.py runserver 0.0.0.0:8000"
+       sh chmod 777 manage.py
+      # sh -c "python3 manage.py makemigrations &&            
+      # python3 manage.py migrate &&                 
+       sh -c python3 manage.py runserver 0.0.0.0:8000"
     depends_on:
       - poc-db      
   poc-db:  
