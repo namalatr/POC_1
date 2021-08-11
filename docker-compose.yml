@@ -12,11 +12,11 @@ services:
   poc-backend:
     container_name: poc-backend
     build:
-      context: ./backend-repo
+      context: ./backend
     ports:
       - "9008:8000"
     volumes:
-      - ./backend-repo:/backend-repo   
+      - ./backend:/backend   
   poc-db:  
     container_name: poc-db
     image: mysql:5.7
@@ -27,7 +27,7 @@ services:
       MYSQL_PASSWORD: admin123
       MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
     volumes:
-      - ./backend-repo/data/mysql/db:/var/lib/mysql
+      - ./backend/data/mysql/db:/var/lib/mysql
     ports:
       - "9003:3306"    
   poc-phpmyadmin:
