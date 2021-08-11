@@ -10,7 +10,7 @@ RUN pip install -r /requirements.txt
 
 
 RUN mkdir backend-repo
-COPY ./backend-repo /backend-repo
+COPY . /backend-repo
 RUN chmod 777 /backend-repo
 WORKDIR /backend-repo
 # Run the application:
